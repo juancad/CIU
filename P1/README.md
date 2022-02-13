@@ -5,7 +5,7 @@
 
 [Introducción](#Introducción)
 
-[Introducción](#Descripción-del-trabajo-realizado)  
+[Descripción del trabajo realizado](#Descripción-del-trabajo-realizado)  
 
 ### 1. Introducción
 Se realizará un juego similar al pong para 2 jugadores utilizando [Proccessing](https://processing.org/).
