@@ -3,13 +3,14 @@
 
 ### Contenidos
 
-[Introducción](#introduccion) 
-[Descripción del trabajo realizado](#descripcion-trabajo) 
-  [Configuración inicial](#config-inicial)
-  [Ventana de inicio](#ventana-inicio)
-  [Ventana de juego](#ventana-juego)
-  [Ventana de juego](#fin-juego)
-  
+1. [Introducción](#introduccion)
+2. [Descripción del trabajo realizado](#descripcion-trabajo)
+  2.1. [Configuración inicial](#config-inicial)
+  2.2. [Ventana de inicio](#ventana-inicio)
+  2.3. [Ventana de juego](#ventana-juego)
+  2.4. [Fin del juego](#fin-juego)
+3. [Referencias](#referencias)
+
 ### 1. Introducción <a name="introduccion"></a>
 Se realizará un juego similar al pong para 2 jugadores utilizando [Proccessing](https://processing.org/).
 La propuesta realizada debe incluir al menos: rebote, marcador, sonido, movimiento inicial aleatorio, admitiendo aportaciones propias de cada estudiante. La propuesta debe cuidar aspectos de usabilidad, dado que la evaluación se basará en el cumplimiento de los requisitos, además de la usabilidad, y el rigor y calidad de la documentación.
@@ -18,6 +19,9 @@ Para poder ejecutar el código, se recomienda:
 1. Descargar el proyecto completo.
 2. Abrir el archivo P1.pde con processing.
 3. Instalar librería de sonido: Herramientas > Añadir herramienta > Libraries > Sound > Install
+
+![Animation](https://user-images.githubusercontent.com/91132611/153786489-5cbce1e9-63b7-429a-8fe9-6a2beacb1d6d.gif)
+
 
 ### 2. Descripción del trabajo realizado <a name="descripcion-trabajo"></a>
 
@@ -468,3 +472,6 @@ void draw() {
 }
 
 ```
+
+### 3. Referencias <a name="referencias"></a>
+Processing references [proccesing.org](https://processing.org/reference/)
