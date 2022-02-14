@@ -27,7 +27,7 @@ Ejemplo de partida:
 ### 2. Descripción del trabajo realizado <a name="descripcion-trabajo"></a>
 
 #### Configuración inicial <a name="config-inicial"></a>
-Para comenzar, la ventana de juego tendrá un tamaño de 500x500px. El texto estará centrado y se cargarán los sonidos haciendo uso de la librería de sonido. Los sonidos estarán guardados en la carpeta sounds del proyecto.
+Para comenzar, la ventana de juego tendrá un tamaño de 500x500px. El texto estará centrado y se cargarán los sonidos haciendo uso de la librería de sonido. Los sonidos estarán guardados en la carpeta sounds del proyecto. Se ha establecido la fuente "Consolas" como fuente predeterminada, mediante la función [textFont](https://processing.org/reference/textFont_.html).
 
 ```
 import processing.sound.*;
