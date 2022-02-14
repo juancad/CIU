@@ -3,11 +3,14 @@
 
 ### Contenidos
 
-[Introducción](#Introducción)
-
-[Descripción del trabajo realizado](#Descripción-del-trabajo-realizado)  
-
-### 1. Introducción
+[Introducción](#introduccion) 
+[Descripción del trabajo realizado](#descripcion-trabajo) 
+  [Configuración inicial](#config-inicial)
+  [Ventana de inicio](#ventana-inicio)
+  [Ventana de juego](#ventana-juego)
+  [Ventana de juego](#fin-juego)
+  
+### 1. Introducción <a name="introduccion"></a>
 Se realizará un juego similar al pong para 2 jugadores utilizando [Proccessing](https://processing.org/).
 La propuesta realizada debe incluir al menos: rebote, marcador, sonido, movimiento inicial aleatorio, admitiendo aportaciones propias de cada estudiante. La propuesta debe cuidar aspectos de usabilidad, dado que la evaluación se basará en el cumplimiento de los requisitos, además de la usabilidad, y el rigor y calidad de la documentación.
 
@@ -16,9 +19,9 @@ Para poder ejecutar el código, se recomienda:
 2. Abrir el archivo P1.pde con processing.
 3. Instalar librería de sonido: Herramientas > Añadir herramienta > Libraries > Sound > Install
 
-### 2. Descripción del trabajo realizado
+### 2. Descripción del trabajo realizado <a name="descripcion-trabajo"></a>
 
-#### Configuración inicial
+#### Configuración inicial <a name="config-inicial"></a>
 Para comenzar, la ventana de juego tendrá un tamaño de 500x500px. El texto estará centrado y se cargarán los sonidos haciendo uso de la librería de sonido. Los sonidos estarán guardados en la carpeta sounds del proyecto.
 
 ```
@@ -37,7 +40,7 @@ void setup() {
 
 ```
 
-#### Ventana de inicio:
+#### Ventana de inicio: <a name="ventana-inicio"></a>
 Se mostrará una ventana de inicio que explicará los controles y el funcionamiento básico del juego. Para ello me he creado una variable booleana que indica si la ventana de inicio está activa o no. En caso de que esté activa, se mostrarán los controles con imágenes utilizando las funciones [image](https://processing.org/reference/image_.html) y [resize](https://processing.org/reference/PImage_resize_.html). 
 En caso de que se presione la tecla enter (para saberlo se hace uso de la variable [key](https://processing.org/reference/key.html)), se cambiará el valor de la variable booleana inicio a false, se limpia la ventana con la función clear() y daría comienzo al juego.
 
@@ -63,6 +66,9 @@ void draw() {
     fill(169, 22, 22);
     text("BIENVENIDOS AL JUEGO DEL PONG", width/2, 50);
     fill(0, 0, 0);
+    textSize(13);
+    text("Ganará el primer jugador que marque 5 goles.", width/2, 310);
+    textSize(15);
     text("Presiona la tecla:", width/2, 340);
     PImage enter = loadImage("images/enter.png");
     enter.resize(100, 90);
@@ -116,9 +122,9 @@ void draw() {
 ```
 Aspecto de la ventana de inicio:
 
-![image](https://user-images.githubusercontent.com/91132611/153782316-4f585044-c46b-4c4f-b85b-388fefcc7143.png)
+![image](https://user-images.githubusercontent.com/91132611/153785194-c0f2307c-ec17-4f18-ae6b-03c0d496b82c.png)
 
-#### Ventana de juego
+#### Ventana de juego <a name="ventana-juego"></a>
 Una vez presionada la tecla enter en la ventana de inicio, dará comienzo al juego. El fondo será de color negro, y se dibujará un círculo para el balón, que será de color blanco, utiliznado la función [ellipse](https://processing.org/reference/ellipse_.html). Las variables posX y posY tendrán la posición del balón, la variable D contiene el diámegro del balón.
 
 ```
@@ -252,9 +258,10 @@ Aspecto de la ventana de juego:
 ![image](https://user-images.githubusercontent.com/91132611/153784186-478285cd-d50b-4028-a07d-8f7d2dba48ad.png)
 
 
-#### Fin del juego
-El fin del juego llegará cuando uno de los dos jugadores haya marcado 6 goles.
-Se ha creado otra variable booleana que indica si el juego ha terminado o no, que se activará cuando uno de los jugadores haya llegado a 6 goles.
+#### Fin del juego <a name="fin-juego"></a>
+El fin del juego llegará cuando uno de los dos jugadores haya marcado 5 goles.
+Se ha creado otra variable booleana que indica si el juego ha terminado o no, que se activará cuando uno de los jugadores haya llegado a 5 goles.
+
 ```
 import processing.sound.*;
 
@@ -263,8 +270,8 @@ float posX=D/2+1; //posición X del balón
 float posY=50+D/2+1; //posición Y del balón
 int anchojug=20;
 int altojug=50;
-int mov=4;
-int mov2=4;
+int mov=6;
+int mov2=6;
 int goles1=0;
 int goles2=0;
 int muestragol=0;
@@ -299,6 +306,9 @@ void draw() {
     fill(169, 22, 22);
     text("BIENVENIDOS AL JUEGO DEL PONG", width/2, 50);
     fill(0, 0, 0);
+    textSize(13);
+    text("Ganará el primer jugador que marque 5 goles.", width/2, 310);
+    textSize(15);
     text("Presiona la tecla:", width/2, 340);
     PImage enter = loadImage("images/enter.png");
     enter.resize(100, 90);
@@ -410,7 +420,7 @@ void draw() {
           sonidoGoal.play();
         }
       }
-
+      
       //marcador
       textSize(20);
       fill(228, 225, 100);
@@ -435,12 +445,12 @@ void draw() {
         muestragol=muestragol-1;
       }
 
-      if (goles1==6 || goles2==6) {
+      if (goles1==5 || goles2==5) {
         fin = true;
         clear();
       }
     } else { //el juego ha finalizado
-      if (goles1==6) {
+      if (goles1==5) {
         background(228, 225, 100);
         fill(0, 0, 0);
         textSize(20);
