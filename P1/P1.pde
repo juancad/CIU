@@ -24,8 +24,9 @@ void setup() {
   //cargo los sonidos
   sonidoBoing = new SoundFile(this, "sounds/boing.wav");
   sonidoGoal = new SoundFile(this, "sounds/goal.wav");
-  //comienzo con una posición aleatoria del balón
-  posX=random(D/2+1, width-D/2-1);
+  //comienzo en el centro de la ventana en el eje X
+  posX=width/2;
+  //comienzo con una posición aleatoria del balón para el eje Y
   posY=random(50+D/2+1, height-D/2-1);
   //movimiento inicial aleatorio
   if (random(0, 10)>=5) {
@@ -94,7 +95,13 @@ void draw() {
       background(0);
       noStroke();
       fill(255, 255, 255);
+      //dibuja el balón
       ellipse(posX, posY, D, D);
+      stroke(255, 255, 255);
+      strokeWeight(2);
+      //dibuja la línea discontinua
+      for(int i=5; i<width; i+=10)
+          line(width/2, i-5, width/2, i);
 
       int jug1x=50-anchojug;
       int jug2x=width-50;
@@ -139,6 +146,9 @@ void draw() {
           muestragol=40;
           juggol=true; //indica que el último gol es del jug1
           choqueBorde = true;
+          //cambio la posición del balón de nuevo
+          posX=width/2;
+          posY=random(50+D/2+1, height-D/2-1);
         }
 
         //Si choca con la izquierda, es gol para el jugador 2
@@ -148,6 +158,9 @@ void draw() {
           muestragol=40;
           juggol=false; //indica que el último gol es del jug2
           choqueBorde = true;
+          //cambio la posición del balón de nuevo
+          posX=width/2;
+          posY=random(50+D/2+1, height-D/2-1);
         } 
         if (!choqueBorde) {
           sonidoBoing.play();
