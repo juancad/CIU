@@ -22,7 +22,7 @@ Para poder ejecutar el código, se recomienda:
 
 Ejemplo de partida:
 
-![Animation](https://user-images.githubusercontent.com/91132611/153793246-146fff2e-9eca-4734-ad73-79058056d537.gif)
+![Animation](https://user-images.githubusercontent.com/91132611/153856664-cb20f416-3d47-4c56-959b-9f1b246a6701.gif)
 
 ### 2. Descripción del trabajo realizado <a name="descripcion-trabajo"></a>
 
@@ -38,6 +38,7 @@ SoundFile sonidoGoal;
 void setup() {
   size(500, 500);
   textAlign(CENTER);
+  textFont(createFont("Consolas",12));
   //cargo los sonidos
   sonidoBoing = new SoundFile(this, "sounds/boing.wav");
   sonidoGoal = new SoundFile(this, "sounds/goal.wav");
@@ -59,6 +60,7 @@ boolean inicio=true; //indica si la ventana de inicio está activa
 void setup() {
   size(500, 500);
   textAlign(CENTER);
+  textFont(createFont("Consolas",12));
   //cargo los sonidos
   sonidoBoing = new SoundFile(this, "sounds/boing.wav");
   sonidoGoal = new SoundFile(this, "sounds/goal.wav");
@@ -127,7 +129,7 @@ void draw() {
 ```
 Aspecto de la ventana de inicio:
 
-![image](https://user-images.githubusercontent.com/91132611/153785194-c0f2307c-ec17-4f18-ae6b-03c0d496b82c.png)
+![image](https://user-images.githubusercontent.com/91132611/153855463-7eb7e1d4-1e91-4fc7-9235-c012ab8000f5.png)
 
 #### Ventana de juego <a name="ventana-juego"></a>
 Una vez presionada la tecla enter en la ventana de inicio, dará comienzo al juego. El fondo será de color negro, y se dibujará un círculo para el balón, que será de color blanco, utiliznado la función [ellipse](https://processing.org/reference/ellipse_.html). Las variables posX y posY tendrán la posición del balón, la variable D contiene el diámegro del balón. También se ha dibujado una línea discontinua en el centro, para separar el campo del jugador 1 y el campo del jugador 2.
@@ -152,6 +154,7 @@ Se ha modificado el setup para que inicialmente, el balón esté en una posició
 void setup() {
   size(500, 500);
   textAlign(CENTER);
+  textFont(createFont("Consolas",12));
   //cargo los sonidos
   sonidoBoing = new SoundFile(this, "sounds/boing.wav");
   sonidoGoal = new SoundFile(this, "sounds/goal.wav");
@@ -276,7 +279,7 @@ Posteriormente se muestra el marcador y quién ha marcado gol.
 ```
 Aspecto de la ventana de juego:
 
-![image](https://user-images.githubusercontent.com/91132611/153792423-537bd21f-e335-4628-ad18-0007780932c3.png)
+![image](https://user-images.githubusercontent.com/91132611/153855808-23e21fc6-8817-4737-b78a-98ca8ad6c70e.png)
 
 #### Fin del juego <a name="fin-juego"></a>
 El fin del juego llegará cuando uno de los dos jugadores haya marcado 5 goles.
@@ -306,6 +309,7 @@ boolean fin=false;
 void setup() {
   size(500, 500);
   textAlign(CENTER);
+  textFont(createFont("Consolas",12));
   //cargo los sonidos
   sonidoBoing = new SoundFile(this, "sounds/boing.wav");
   sonidoGoal = new SoundFile(this, "sounds/goal.wav");
