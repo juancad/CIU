@@ -21,6 +21,7 @@ boolean fin=false;
 void setup() {
   size(500, 500);
   textAlign(CENTER);
+  textFont(createFont("Consolas",12));
   //cargo los sonidos
   sonidoBoing = new SoundFile(this, "sounds/boing.wav");
   sonidoGoal = new SoundFile(this, "sounds/goal.wav");
