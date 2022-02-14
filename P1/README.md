@@ -20,6 +20,8 @@ Para poder ejecutar el código, se recomienda:
 2. Abrir el archivo P1.pde con processing.
 3. Instalar librería de sonido: Herramientas > Añadir herramienta > Libraries > Sound > Install
 
+Ejemplo de partida:
+
 ![Animation](https://user-images.githubusercontent.com/91132611/153786489-5cbce1e9-63b7-429a-8fe9-6a2beacb1d6d.gif)
 
 
