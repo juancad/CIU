@@ -13,7 +13,7 @@
 
 ### 1. Introducción <a name="introduccion"></a>
 Se realizará un juego similar al pong para 2 jugadores utilizando [Proccessing](https://processing.org/).
-La propuesta realizada debe incluir al menos: rebote, marcador, sonido, movimiento inicial aleatorio, admitiendo aportaciones propias de cada estudiante. La propuesta debe cuidar aspectos de usabilidad, dado que la evaluación se basará en el cumplimiento de los requisitos, además de la usabilidad, y el rigor y calidad de la documentación.
+La propuesta realizada debe incluir al menos: rebote, marcador, sonido, movimiento inicial aleatorio, admitiendo aportaciones propias de cada estudiante.
 
 Para poder ejecutar el código, se recomienda:
 1. Descargar el proyecto completo.
@@ -22,8 +22,7 @@ Para poder ejecutar el código, se recomienda:
 
 Ejemplo de partida:
 
-![Animation](https://user-images.githubusercontent.com/91132611/153786489-5cbce1e9-63b7-429a-8fe9-6a2beacb1d6d.gif)
-
+![Animation](https://user-images.githubusercontent.com/91132611/153793246-146fff2e-9eca-4734-ad73-79058056d537.gif)
 
 ### 2. Descripción del trabajo realizado <a name="descripcion-trabajo"></a>
 
@@ -131,15 +130,23 @@ Aspecto de la ventana de inicio:
 ![image](https://user-images.githubusercontent.com/91132611/153785194-c0f2307c-ec17-4f18-ae6b-03c0d496b82c.png)
 
 #### Ventana de juego <a name="ventana-juego"></a>
-Una vez presionada la tecla enter en la ventana de inicio, dará comienzo al juego. El fondo será de color negro, y se dibujará un círculo para el balón, que será de color blanco, utiliznado la función [ellipse](https://processing.org/reference/ellipse_.html). Las variables posX y posY tendrán la posición del balón, la variable D contiene el diámegro del balón.
+Una vez presionada la tecla enter en la ventana de inicio, dará comienzo al juego. El fondo será de color negro, y se dibujará un círculo para el balón, que será de color blanco, utiliznado la función [ellipse](https://processing.org/reference/ellipse_.html). Las variables posX y posY tendrán la posición del balón, la variable D contiene el diámegro del balón. También se ha dibujado una línea discontinua en el centro, para separar el campo del jugador 1 y el campo del jugador 2.
+```
+    if (!fin) {
+      background(0);
+      noStroke();
+      fill(255, 255, 255);
+      //dibuja el balón
+      ellipse(posX, posY, D, D);
+      stroke(255, 255, 255);
+      strokeWeight(2);
+      //dibuja la línea discontinua
+      for(int i=5; i<width; i+=10)
+          line(width/2, i-5, width/2, i);
+    }
+```
 
-```
-    background(0);
-    noStroke();
-    fill(255, 255, 255);
-    ellipse(posX, posY, D, D);
-```
-Se ha modificado el setup para que inicialmente, el balón esté en una posición X y una posición Y aleatoria (se tiene en cuenta el diámetro a la hora de establecer la posición para que el balón no aparezca fuera de la ventana de juego). Las variables mov y mov2 indican el movimiento del balón (si es hacia arriba, abajo, izquierda o derecha). Un valor negativo de mov indica que el balón va hacia la izquierda, y positivo a la derecha. Un valor negativo de mov2 indica que el balón va hacia arriba, y positivo hacia abajo. En el setup también se establece el movimiento de forma aleatoria.
+Se ha modificado el setup para que inicialmente, el balón esté en una posición Y aleatoria (se tiene en cuenta el diámetro a la hora de establecer la posición para que el balón no aparezca fuera de la ventana de juego). La posición X inicial será la mitad de la ventana de juego. Las variables mov y mov2 indican el movimiento del balón (si es hacia arriba, abajo, izquierda o derecha). Un valor negativo de mov indica que el balón va hacia la izquierda, y positivo a la derecha. Un valor negativo de mov2 indica que el balón va hacia arriba, y positivo hacia abajo. En el setup también se establece el movimiento inicial del balón de forma aleatoria.
 
 ```
 void setup() {
@@ -148,8 +155,9 @@ void setup() {
   //cargo los sonidos
   sonidoBoing = new SoundFile(this, "sounds/boing.wav");
   sonidoGoal = new SoundFile(this, "sounds/goal.wav");
-  //comienzo con una posición aleatoria del balón
-  posX=random(D/2+1, width-D/2-1);
+  //comienzo en el centro de la ventana en el eje X
+  posX=width/2;
+  //comienzo con una posición aleatoria del balón para el eje Y
   posY=random(50+D/2+1, height-D/2-1);
   //movimiento inicial aleatorio
   if (random(0, 10)>=5) {
@@ -160,7 +168,7 @@ void setup() {
 ```
 
 Ahora habría que dibujar a cada jugador en la ventana de juego. Para ello se utilizará una posición X e Y. La variable anchojug contiene el tamaño de ancho de los rectángulos de los jugadores. El jugador 1 estará en la posición 50+anchojug y el jugador 2 en la posición width-50, ya que quiero dejar un margen de 50 píxeles entre el borde izquierdo y derecho de la ventana y el rectángulo del jugador.
-Posteriormente se controla las teclas que se han pulsado. El jugador 1 tendrás los controles arriba y abajo, y el jugador 2 los controles w y s. En caso de que se pulse alguna tecla de estas, se modificará la posición del jugador en el eje Y, aumentando o disminuyendo de 5 en 5. Luego se dibujan ambos jugadores con la función [rect](https://processing.org/reference/rect_.html). 
+Posteriormente se controla las teclas que se han pulsado. El jugador 1 tendrá los controles arriba y abajo, y el jugador 2 los controles w y s. En caso de que se pulse alguna tecla de estas, se modificará la posición del jugador en el eje Y, aumentando o disminuyendo de 5 en 5. Luego se dibujan ambos jugadores con la función [rect](https://processing.org/reference/rect_.html). 
 
 ```
     int jug1x=50-anchojug;
@@ -202,35 +210,42 @@ Ahora se verifica si hay choque con el borde superior o inferior de la ventana, 
 En caso de que el balón llegue a uno de los bordes superior o inferior, se modifica el movimiento, pasando de positivo a negativo o viceversa.
 
 También se verifica si hay choque con el borde izquierdo o derecho, y con los jugadores, para modificar su movimiento sobre el eje X. Se ha creado una variable booleana que me indica si me he chocado con un borde o no, para poder diferenciar el sonido que hace cuando choca con un borde (se marca un gol) de cuando choca contra un jugador.
-En caso de que se marque gol, se incrementa en 1 el marcador del jugador que ha marcado y se indica con una variable booleana qué jugador ha sido el que ha marcado el gol (para posteriormetne mostrarlo en el juego).
-```
-    if (posX>=width-D/2 || posX<=0+D/2 || (mov<0 && jug1y<=posY+D/2 && posY-D/2<=jug1y+altojug && jug1x+anchojug>=posX-D/2) || (mov>0 && jug2y<=posY+D/2 && posY-D/2<=jug2y+altojug && jug2x<=posX+D/2))
-    {
-      boolean choqueBorde = false; //si no ha chocado con borde
-      mov=-mov;
-      //Si choca con la derecha, es gol para el jugador 1
-      if  (posX>=width-D/2)
-      {
-        goles1=goles1+1;
-        muestragol=40;
-        juggol=true; //indica que el último gol es del jug1
-        choqueBorde = true;
-      }
+En caso de que se marque gol, se incrementa en 1 el marcador del jugador que ha marcado y se indica con una variable booleana qué jugador ha sido el que ha marcado el gol (para posteriormetne mostrarlo en el juego). Después de que se haya marcado gol, el balón comenzará de nuevo desde el centro del campo, con una posición en el eje Y aleatoria.
 
-      //Si choca con la izquierda, es gol para el jugador 2
-      if  (posX<=0+D/2)
+```
+      if (posX>=width-D/2 || posX<=0+D/2 || (mov<0 && jug1y<=posY+D/2 && posY-D/2<=jug1y+altojug && jug1x+anchojug>=posX-D/2) || (mov>0 && jug2y<=posY+D/2 && posY-D/2<=jug2y+altojug && jug2x<=posX+D/2))
       {
-        goles2=goles2+1;
-        muestragol=40;
-        juggol=false; //indica que el último gol es del jug2
-        choqueBorde = true;
-      } 
-      if (!choqueBorde) {
-        sonidoBoing.play();
-      } else {
-        sonidoGoal.play();
+        boolean choqueBorde = false; //si no ha chocado con borde
+        mov=-mov;
+        //Si choca con la derecha, es gol para el jugador 1
+        if  (posX>=width-D/2)
+        {
+          goles1=goles1+1;
+          muestragol=40;
+          juggol=true; //indica que el último gol es del jug1
+          choqueBorde = true;
+          //cambio la posición del balón de nuevo
+          posX=width/2;
+          posY=random(50+D/2+1, height-D/2-1);
+        }
+
+        //Si choca con la izquierda, es gol para el jugador 2
+        if  (posX<=0+D/2)
+        {
+          goles2=goles2+1;
+          muestragol=40;
+          juggol=false; //indica que el último gol es del jug2
+          choqueBorde = true;
+          //cambio la posición del balón de nuevo
+          posX=width/2;
+          posY=random(50+D/2+1, height-D/2-1);
+        } 
+        if (!choqueBorde) {
+          sonidoBoing.play();
+        } else {
+          sonidoGoal.play();
+        }
       }
-    }
 ```
 
 Posteriormente se muestra el marcador y quién ha marcado gol.
@@ -261,12 +276,11 @@ Posteriormente se muestra el marcador y quién ha marcado gol.
 ```
 Aspecto de la ventana de juego:
 
-![image](https://user-images.githubusercontent.com/91132611/153784186-478285cd-d50b-4028-a07d-8f7d2dba48ad.png)
-
+![image](https://user-images.githubusercontent.com/91132611/153792423-537bd21f-e335-4628-ad18-0007780932c3.png)
 
 #### Fin del juego <a name="fin-juego"></a>
 El fin del juego llegará cuando uno de los dos jugadores haya marcado 5 goles.
-Se ha creado otra variable booleana que indica si el juego ha terminado o no, que se activará cuando uno de los jugadores haya llegado a 5 goles.
+Se ha creado otra variable booleana que indica si el juego ha terminado o no, que se activará cuando uno de los jugadores haya llegado a 5 goles. Si esa variable booleana está activa, aparecerá la ventana de fin de juego, que indicará qué jugador ha ganado la partida.
 
 ```
 import processing.sound.*;
@@ -276,8 +290,8 @@ float posX=D/2+1; //posición X del balón
 float posY=50+D/2+1; //posición Y del balón
 int anchojug=20;
 int altojug=50;
-int mov=6;
-int mov2=6;
+int mov=5;
+int mov2=5;
 int goles1=0;
 int goles2=0;
 int muestragol=0;
@@ -295,8 +309,9 @@ void setup() {
   //cargo los sonidos
   sonidoBoing = new SoundFile(this, "sounds/boing.wav");
   sonidoGoal = new SoundFile(this, "sounds/goal.wav");
-  //comienzo con una posición aleatoria del balón
-  posX=random(D/2+1, width-D/2-1);
+  //comienzo en el centro de la ventana en el eje X
+  posX=width/2;
+  //comienzo con una posición aleatoria del balón para el eje Y
   posY=random(50+D/2+1, height-D/2-1);
   //movimiento inicial aleatorio
   if (random(0, 10)>=5) {
@@ -365,7 +380,13 @@ void draw() {
       background(0);
       noStroke();
       fill(255, 255, 255);
+      //dibuja el balón
       ellipse(posX, posY, D, D);
+      stroke(255, 255, 255);
+      strokeWeight(2);
+      //dibuja la línea discontinua
+      for(int i=5; i<width; i+=10)
+          line(width/2, i-5, width/2, i);
 
       int jug1x=50-anchojug;
       int jug2x=width-50;
@@ -410,6 +431,9 @@ void draw() {
           muestragol=40;
           juggol=true; //indica que el último gol es del jug1
           choqueBorde = true;
+          //cambio la posición del balón de nuevo
+          posX=width/2;
+          posY=random(50+D/2+1, height-D/2-1);
         }
 
         //Si choca con la izquierda, es gol para el jugador 2
@@ -419,6 +443,9 @@ void draw() {
           muestragol=40;
           juggol=false; //indica que el último gol es del jug2
           choqueBorde = true;
+          //cambio la posición del balón de nuevo
+          posX=width/2;
+          posY=random(50+D/2+1, height-D/2-1);
         } 
         if (!choqueBorde) {
           sonidoBoing.play();
@@ -472,7 +499,6 @@ void draw() {
     }
   }
 }
-
 ```
 
 ### 3. Referencias <a name="referencias"></a>
