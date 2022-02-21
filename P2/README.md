@@ -108,10 +108,10 @@ if (keyPressed == true && key == BACKSPACE) {
 ```
 
 Aspecto de la ventana de dibujo:
-![image](https://user-images.githubusercontent.com/91132611/155008712-daa2eb51-8f71-4750-9fa4-b0d939e38707.png)
+![image](https://user-images.githubusercontent.com/91132611/155011833-47b8c913-a050-402f-a7d6-6e48485b9ad2.png)
 
 Aspecto de la ventana de dibujo con un dibujo creado por el usuario:
-![image](https://user-images.githubusercontent.com/91132611/155010426-01466e2e-c2dd-4509-b2ed-c57e09cda64f.png)
+![image](https://user-images.githubusercontent.com/91132611/155011770-5a50ec47-d760-421a-b5fd-b98079433713.png)
 
 #### 2.2 Vista del objeto tridimensional <a name="vista-objeto-tridimensional"></a>
 
@@ -163,7 +163,7 @@ if (keyPressed == true && key == BACKSPACE) {
 ```
 
 Aspecto de la ventana que muestra el objeto tridimensional creado por el usuario:
-![image](https://user-images.githubusercontent.com/91132611/155010494-fbddcc4d-a399-4bf7-8918-bb14a99b4645.png)
+![image](https://user-images.githubusercontent.com/91132611/155011815-249e6acd-20b9-4687-8bf9-07514fe8205e.png)
 
 ```
 rect (10, 10, 320, 110);
