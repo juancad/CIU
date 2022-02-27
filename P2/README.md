@@ -165,10 +165,6 @@ if (keyPressed == true && key == BACKSPACE) {
 Aspecto de la ventana que muestra el objeto tridimensional creado por el usuario:
 ![image](https://user-images.githubusercontent.com/91132611/155011815-249e6acd-20b9-4687-8bf9-07514fe8205e.png)
 
-```
-rect (10, 10, 320, 110);
-text("Controles: \n Mover cursor: mueve la figura. \n +: Aumentar zoom\n -: Disminuir zoom.\n BACKSPACE: Volver a dibujar.", 20, 30);
-```
 
 ### 3. Referencias <a name="referencias"></a>
 Processing references [proccesing.org](https://processing.org/reference/)
