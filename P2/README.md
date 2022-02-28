@@ -14,7 +14,7 @@
 
 "Crear un prototipo que recoja puntos de un perfil del sólido de revolución al hacer clic con el ratón sobre la pantalla. Dicho perfil será utilizado por el prototipo para crear un objeto tridimensional por medio de una superficie de revolución, almacenando la geometría resultante en una variable de tipo PShape, ver a modo de ilustración la figura. El prototipo permitirá crear sólidos de revolución de forma sucesiva, si bien únicamente se asumirá necesario almacenar el último definido."
 
-Un ejemplo de ejecución del código:
+Un ejemplo de ejecución:
 
 ![animacion](https://user-images.githubusercontent.com/91132611/155011123-cb93983f-fe2d-494c-8fb7-263732eb2a8d.gif)
 
