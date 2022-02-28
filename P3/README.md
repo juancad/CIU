@@ -15,7 +15,7 @@
 "Crear un prototipo que muestre un sistema planetario en movimiento que incluya una estrella, al menos cinco planetas y alguna luna, integrando primitivas 3D, texto e imágenes (p.e. imagen de fondo). Se valorará que exista algún tipo de interacción."
 
 Un ejemplo de ejecución:
-![animacion](https://user-images.githubusercontent.com/91132611/155978719-7051460b-55cd-454e-a40c-37242c6a9d42.gif)
+![Animation](https://user-images.githubusercontent.com/91132611/155983667-2595de3e-8498-4444-871e-8d98ea3fe6a6.gif)
 
 #### 2.1 Configuración inicial <a name="config-inicial"></a>
 El método setup() contendrá la configuración inicial de la aplicaicón, en la que se carga una imagen de fondo, se cambia la fuente por defecto y se establece el tamaño de la ventana de la aplicaicón en 1280x720.
@@ -48,6 +48,9 @@ En el método draw() se dibuja la estrella, con su movimiento de rotación (esta
     angS1 = angS1+0.2;
 ```
 Como girará sólo sobre sí misma, se establece un movimiento en el eje Y (no se mueve en el resto de ejes). El ángulo de rotación va aumentando en el tiempo, lo que permite que la esfera gire sobre sí misma.
+
+Ejemplo de la vista de la estrella principal rotando sobre sí misma:
+![Animation2](https://user-images.githubusercontent.com/91132611/155983916-7dd3174b-6246-4d9b-8a40-e40e01c4dc8e.gif)
 
 Para los planetas del sistema y satélites, se han craedo las clases: "Planet" y "Satelite".
 
