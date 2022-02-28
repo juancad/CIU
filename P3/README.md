@@ -11,6 +11,7 @@
 3. [Referencias](#referencias)
 
 ### 1. Introducción <a name="introduccion"></a>
+![animacion](https://user-images.githubusercontent.com/91132611/155929156-97ac4bd1-c4cd-4ebb-8e11-12061f7e8440.gif)
 
 ### 3. Referencias <a name="referencias"></a>
 Processing references [proccesing.org](https://processing.org/reference/)
