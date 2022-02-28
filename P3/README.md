@@ -56,15 +56,75 @@ Los planetas están definidos en la clase "Planet".
 El constructor por defecto permite crear un planeta con una imagen y un tamaño determinado. Dicho constructor se usará en el método setup() de la clase principal para cargar la textura y establecer el tamaño del planeta.
 La clase Planet contiene una lista de satélites, que contendrá los satélites que tiene cada planeta.
 El método showPlanet() permite mostrar el planeta en una posición determinada, con una velocidad de traslación y rotación definida. Si el planeta tiene satélites, se mostrarán dichos satélites. La aplicación permite ocultar los satélites del planeta, para ello se utilzia un parámetro booleano que permitirá saber si se deben mostrar o no los satélites en la aplicación.
-El método addSatelite(Satelite s) permite añadir un satélite a un planeta.
+
+Ejemplo construcción de planeta (en el método setup()), que establece una imagen y un tamaño al planeta:
+```
+P1 = new Planet("images/P1.jpg", 15);
+```
+Ejemplo de cómo mostrar el planeta (en el método draw()), que establece una posición, velocidad de traslación y rotación y si los satélites deben mostrarse o no. En este caso no hay satélites y por eso se pasa false: 
+```
+P1.showPlanet(150, 0, 0, 0.3, 1, false);
+```
+El método addSatelite(Satelite s) permite añadir un satélite a un planeta. 
 
 #### 2.3 Satélites <a name="satelites"></a>
 Los satélites están definidos en la clase "Satelite".
-El constructor por defecto permite crear un satelite con una imagen, un tamaño determinado, la distancia a la que se encuentra del planeta y una velocidad de traslación y de rotación determinadas. Dicho constructor se usará en el método setup() para cargar la textura, establecer el tamaño del satélite y los parámetros que definen su posición y velocidad de rotación y traslación. En el método setup() se crearán los planetas, satélites y se añadirán los satélites al planeta.
-El método showSatelite() permite mostrar el satélite a la distancia del planeta que hayamos determinado, con una velocidad de traslación y rotación definida.
+El constructor por defecto permite crear un satelite con una imagen, un tamaño determinado, la distancia a la que se encuentra del planeta y una velocidad de traslación y de rotación determinadas. Dicho constructor se usará en el método setup() para cargar la textura, establecer el tamaño del satélite y los parámetros que definen su posición y velocidad de rotación y traslación. 
+Ejemplo de creación de planeta con satélite (en el método setup()), que establece una imagen, un tamaño, una distancia con respecto al planeta y una velocidad de traslación y rotación:
+```
+P3 = new Planet("images/P3.jpg", 22);
+P3.addSatelite(new Satelite("images/M1.jpg", 7, 40, 0.5, 0.7));
+```
+
+El método showSatelite() permite mostrar el satélite a la distancia del planeta que hayamos determinado, con una velocidad de traslación y rotación definida. Este método se utiliza en el método showPlanet() de Planet, por lo que no será necesario invocarlo desde la clase principal.
 
 #### 2.4 Controles <a name="satelites"></a>
 El usuario podrá ocultar determiandos planetas en la aplicación. Para ocultar el primer planeta, se deberá pulsar la tecla 1, para el segundo la tecla 2 y así sucesivamente. Para ocultar los satélites se deberá pulsar la tecla R y para ocultarlos la tecla T. Se utlizan para ello variables booleanas, que estarán activas si el planeta o satélites se tienen que mostrar. Al pulsar una tecla numérica se desactivará la variable booleana correspondiente al planeta que quiera ocultar. Si pulso espacio, se activará el booleano correspondiente a cada planeta y a los satélites, mostrándolos.
+```
+if (keyPressed == true && (key == 'R' || key == 'r')) {
+    showSat = false;
+  }
+  if (keyPressed == true && (key == 'T' || key == 't')) {
+    showSat = true;
+  }
+
+  if (keyPressed == true && key == ' ') {
+    showSat = true;
+    showP1 = true;
+    showP2 = true;
+    showP3 = true;
+    showP4 = true; 
+    showP5 = true; 
+    showP6 = true; 
+    showP7 = true; 
+    showP8 = true;
+  }
+
+  if (keyPressed == true && key == '1') {
+    showP1 = false;
+  }
+  if (keyPressed == true && key == '2') {
+    showP2 = false;
+  }
+  if (keyPressed == true && key == '3') {
+    showP3 = false;
+  }
+  if (keyPressed == true && key == '4') {
+    showP4 = false;
+  }
+  if (keyPressed == true && key == '5') {
+    showP5 = false;
+  }
+  if (keyPressed == true && key == '6') {
+    showP6 = false;
+  }
+  if (keyPressed == true && key == '7') {
+    showP7 = false;
+  }
+  if (keyPressed == true && key == '8') {
+    showP8 = false;
+  }
+```
 
 ### 3. Referencias <a name="referencias"></a>
 Processing references [proccesing.org](https://processing.org/reference/)
