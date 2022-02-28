@@ -1,12 +1,12 @@
 //import gifAnimation.*;
 
-PImage bg, imgS1, imgP1, imgP2, imgP3, imgP4, imgP5, imgP6, imgP7, imgP8, imgM1, imgM2;
-float movRot=0, angS1=0, angP1=0, angP2=0, angP3=0, angP4=0, angP5=0, angP6=0, angP7=0, angP8=0, angM1=0, angM2;
+PImage bg, imgS1;
+float movRot=0, angS1=0;
 boolean showSat = true, showP1 = true, showP2 = true, showP3 = true, showP4 = true, showP5 = true, showP6 = true, showP7 = true, showP8 = true;
 PShape S1;
 //GifMaker filegif;
-Planet P1, P2; 
-PShape P3, P4, P5, P6, P7, P8, M1, M2;
+Planet P1, P2, P3, P4, P5, P6, P7, P8;
+Satelite M1, M2, M3;
 
 void setup()
 {
@@ -32,69 +32,28 @@ void setup()
   P2 = new Planet("images/P2.jpg", 15);
 
   //carga P3
-  imgP3 = loadImage("images/P3.jpg");
-  beginShape();
-  P3 = createShape(SPHERE, 22);
-  P3.setStroke(255); //elimina visualización de aristas
-  P3.setTexture(imgP3); 
-  endShape(CLOSE);
+  P3 = new Planet("images/P3.jpg", 22);
+  //añado una luna a P3
+  P3.addSatelite(new Satelite("images/M1.jpg", 7, 40, 0.5, 0.7));
 
   //carga P4
-  imgP4 = loadImage("images/P4.jpg");
-  beginShape();
-  P4 = createShape(SPHERE, 22);
-  P4.setStroke(255); //elimina visualización de aristas
-  P4.setTexture(imgP4); 
-  endShape(CLOSE);
+  P4 = new Planet("images/P4.jpg", 21);
 
   //carga P5
-  imgP5 = loadImage("images/P5.jpg");
-  beginShape();
-  P5 = createShape(SPHERE, 35);
-  P5.setStroke(255); //elimina visualización de aristas
-  P5.setTexture(imgP5); 
-  endShape(CLOSE);
-
+  P5 = new Planet("images/P5.jpg", 34);
+  //añado dos lunas a P5
+  P5.addSatelite(new Satelite("images/M2.jpg", 8, 80, 0.5, 0.7));
+  P5.addSatelite(new Satelite("images/M3.jpg", 5, 100, 0.23, 1));
+    
   //carga P6
-  imgP6 = loadImage("images/P6.jpg");
-  beginShape();
-  P6 = createShape(SPHERE, 35);
-  P6.setStroke(255); //elimina visualización de aristas
-  P6.setTexture(imgP6); 
-  endShape(CLOSE);
+  P6 = new Planet("images/P6.jpg", 28);
 
   //carga P7
-  imgP7 = loadImage("images/P7.jpg");
-  beginShape();
-  P7 = createShape(SPHERE, 15);
-  P7.setStroke(255); //elimina visualización de aristas
-  P7.setTexture(imgP7); 
-  endShape(CLOSE);
+  P7 = new Planet("images/P7.jpg", 15);
 
   //carga P8
-  imgP8 = loadImage("images/P8.jpg");
-  beginShape();
-  P8 = createShape(SPHERE, 40);
-  P8.setStroke(255); //elimina visualización de aristas
-  P8.setTexture(imgP8); 
-  endShape(CLOSE);
+  P8 = new Planet("images/P8.jpg", 40);
 
-  //carga M1
-  imgM1 = loadImage("images/M1.jpg");
-  beginShape();
-  M1 = createShape(SPHERE, 7);
-  M1.setStroke(255); //elimina visualización de aristas
-  M1.setTexture(imgM1); 
-  endShape(CLOSE);
-
-  //carga M2
-  imgM2 = loadImage("images/M2.jpg");
-  beginShape();
-  M2 = createShape(SPHERE, 8);
-  M2.setStroke(255); //elimina visualización de aristas
-  M2.setTexture(imgM2); 
-  endShape(CLOSE);
-  
   //filegif = new GifMaker(this, "animacion.gif");
   //filegif.setRepeat(0);
 }
@@ -119,111 +78,43 @@ void draw()
 
   //P1
   if (showP1) {
-    P1.showPlanet(150, 0, 0, 0.3, 1);
+    P1.showPlanet(150, 0, 0, 0.3, 1, false);
   }
 
   //P2
   if (showP2) {
-    P2.showPlanet(220, 0, 0, 0.2, 0.9);
+    P2.showPlanet(220, 0, 0, 0.2, 0.9, false);
   }
 
   //P3: planeta con una luna
   if (showP3) {
-    pushMatrix();
-    //movimiento de traslación P3
-    rotateY(radians(angP3));
-    translate(-280, 0, 0);
-    //movimiento de rotación P3
-    rotateY(radians(movRot));
-    shape(P3);
-    if (showSat) {
-      //movimiento de traslación de la luna
-      rotateY(radians(angM1));
-      translate(40, 0, 0);
-      //movimiento de rotación de la luna
-      rotateY(radians(movRot));
-      shape(M1);
-    }
-    popMatrix();
-    angP3 = incrementAng(angP3, 0.25);
-    angM1 = incrementAng(angM1, 0.5);
+    P3.showPlanet(-280, 0, 0, 0.25, 0.5, showSat);
   }
 
   //P4
   if (showP4) {
-    pushMatrix();
-    //movimiento de traslación
-    rotateY(radians(angP4));
-    translate(-380, 0, 0);
-    //movimiento de rotación
-    rotateY(radians(movRot));
-    shape(P4);
-    popMatrix();
-    angP4 = incrementAng(angP4, 0.3);
+    P4.showPlanet(-380, 0, 0, 0.3, 0.8, false);
   }
 
   //P5: planeta con luna
   if (showP5) {
-    pushMatrix();
-    //movimiento de traslación
-    rotateY(radians(angP5));
-    translate(480, 0, 0);
-    //movimiento de rotación
-    rotateY(radians(movRot));
-    shape(P5);
-    if (showSat) {
-      //movimiento de traslación de la luna 2
-      rotateY(radians(angM2));
-      translate(80, 0, 0);
-      //movimiento de rotación de la luna 2
-      rotateY(radians(movRot));
-      shape(M2);
-    }
-    popMatrix();
-    angP5 = incrementAng(angP5, 0.2);
-    angM2 = incrementAng(angM2, 0.1);
+    P5.showPlanet(480, 0, 0, 0.2, 0.6, showSat);
   }
 
   //P6
   if (showP6) {
-    pushMatrix();
-    //movimiento de traslación
-    rotateY(radians(angP6));
-    translate(-600, 0, 0);
-    //movimiento de rotación
-    rotateY(radians(movRot));
-    shape(P6);
-    popMatrix();
-    angP6 = incrementAng(angP6, 0.4);
+    P6.showPlanet(-600, 0, 0, 0.4, 1, false);
   }
 
   //P7
   if (showP7) {
-    pushMatrix();
-    //movimiento de traslación
-    rotateY(radians(angP7));
-    translate(-680, 0, 0);
-    //movimiento de rotación
-    rotateY(radians(movRot));
-    shape(P7);
-    popMatrix();
-    angP7 = incrementAng(angP7, 0.15);
+    P7.showPlanet(-680, 0, 0, 0.15, 0.5, false);
   }
 
   //P8
   if (showP8) {
-    pushMatrix();
-    //movimiento de traslación
-    rotateY(radians(angP8));
-    translate(-750, 0, 0);
-    //movimiento de rotación
-    rotateY(radians(movRot));
-    shape(P8);
-    popMatrix();
-    angP8 = incrementAng(angP8, 0.3);
+    P8.showPlanet(-750, 0, 0, 0.3, 0.6, false);
   }
-
-  movRot = incrementAng(movRot, 0.6);
 
   if (keyPressed == true && (key == 'R' || key == 'r')) {
     showSat = false;
@@ -268,7 +159,7 @@ void draw()
   if (keyPressed == true && key == '8') {
     showP8 = false;
   }
-  
+
   //filegif.setDelay(1000/60);
   //filegif.addFrame();
 }

@@ -16,9 +16,10 @@ public class Planet {
 
     this.angTranslation = 0;
     this.angRotation = 0;
+    this.satelites = new ArrayList<Satelite>();
   }
 
-  public void showPlanet(float posX, float posY, float posZ, float velocTranslation, float velocRotation) {
+  public void showPlanet(float posX, float posY, float posZ, float velocTranslation, float velocRotation, boolean showSat) {
     pushMatrix();
     //movimiento de traslación
     rotateY(radians(angTranslation));
@@ -26,6 +27,11 @@ public class Planet {
     //movimiento de rotación
     rotateY(radians(angRotation));
     shape(sphere);
+    //muestra los satélites
+    if(showSat) {
+    for(int i = 0; i<satelites.size(); i++)
+      satelites.get(i).showSatelite();
+    }
     popMatrix();
 
     //aumenta la traslación
@@ -39,5 +45,9 @@ public class Planet {
       angRotation = 0;
     else
       angRotation = angRotation+velocRotation;
+  }
+  
+  public void addSatelite(Satelite s) {
+    satelites.add(s);
   }
 }
