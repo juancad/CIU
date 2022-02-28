@@ -1,4 +1,4 @@
-## Práctica 2. Superficie de revolución
+## Práctica 3. Transformaciones
 ### Autor: Juan Carlos Alcalde Díaz
 
 ### Contenidos
