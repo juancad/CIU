@@ -2,7 +2,7 @@
 
 PImage bg, imgS1;
 float angS1=0;
-boolean showSat = true, showP1 = true, showP2 = true, showP3 = true, showP4 = true, showP5 = true, showP6 = true, showP7 = true, showP8 = true;
+boolean showSat = false, showP1 = false, showP2 = false, showP3 = false, showP4 = false, showP5 = false, showP6 = false, showP7 = false, showP8 = false;
 PShape S1;
 //GifMaker filegif;
 Planet P1, P2, P3, P4, P5, P6, P7, P8;
@@ -106,23 +106,23 @@ void draw()
 
   //P6
   if (showP6) {
-    P6.showPlanet(-600, 0, 0, 0.4, 1, false);
+    P6.showPlanet(-615, 0, 0, 0.4, 1, false);
   }
 
   //P7
   if (showP7) {
-    P7.showPlanet(-690, 0, 0, 0.15, 0.5, false);
+    P7.showPlanet(-700, 0, 0, 0.15, 0.5, false);
   }
 
   //P8
   if (showP8) {
-    P8.showPlanet(-750, 0, 0, 0.3, 0.6, false);
+    P8.showPlanet(-780, 0, 0, 0.3, 0.6, false);
   }
 
   if (keyPressed == true && (key == 'R' || key == 'r')) {
     showSat = false;
   }
-  if (keyPressed == true && (key == 'R' || key == 't')) {
+  if (keyPressed == true && (key == 'T' || key == 't')) {
     showSat = true;
   }
 
