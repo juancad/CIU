@@ -81,7 +81,7 @@ P3.addSatelite(new Satelite("images/M1.jpg", 7, 40, 0.5, 0.7));
 
 El método showSatelite() permite mostrar el satélite a la distancia del planeta que hayamos determinado, con una velocidad de traslación y rotación definida. Este método se utiliza en el método showPlanet() de Planet, por lo que no será necesario invocarlo desde la clase principal.
 
-#### 2.4 Controles <a name="satelites"></a>
+#### 2.4 Controles <a name="controles"></a>
 El usuario podrá ocultar determiandos planetas en la aplicación. Para ocultar el primer planeta, se deberá pulsar la tecla 1, para el segundo la tecla 2 y así sucesivamente. Para ocultar los satélites se deberá pulsar la tecla R y para ocultarlos la tecla T. Se utlizan para ello variables booleanas, que estarán activas si el planeta o satélites se tienen que mostrar. Al pulsar una tecla numérica se desactivará la variable booleana correspondiente al planeta que quiera ocultar. Si pulso espacio, se activará el booleano correspondiente a cada planeta y a los satélites, mostrándolos.
 ```
 if (keyPressed == true && (key == 'R' || key == 'r')) {
