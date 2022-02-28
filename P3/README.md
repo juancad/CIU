@@ -15,6 +15,9 @@
 
 ### 3. Referencias <a name="referencias"></a>
 Processing references [proccesing.org](https://processing.org/reference/)
+
 [Guión práctica 3](https://github.com/otsedom/otsedom.github.io/blob/main/CIU/P3/README.md)
+
 [Fondo](https://www.deviantart.com/paulinemoss/art/Telescopic-View-426425862)
+
 [Imágenes de las texturas](http://frederickhiggins.com/celestia/terrestrials.htm)
