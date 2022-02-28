@@ -1,7 +1,7 @@
 //import gifAnimation.*;
 
 PImage bg, imgS1;
-float movRot=0, angS1=0;
+float angS1=0;
 boolean showSat = true, showP1 = true, showP2 = true, showP3 = true, showP4 = true, showP5 = true, showP6 = true, showP7 = true, showP8 = true;
 PShape S1;
 //GifMaker filegif;
