@@ -17,6 +17,9 @@
 Un ejemplo de ejecución:
 ![Animation](https://user-images.githubusercontent.com/91132611/155983667-2595de3e-8498-4444-871e-8d98ea3fe6a6.gif)
 
+### 2. Descripción del trabajo realizado <a name="descripcion-trabajo"></a>
+La idea es crear una estrella principal con planetas que giren a su alrededor. La estrella principal se encontrará en el centro de la ventana, y los planetas girarán a su alrededor. Algunos planetas podrán tener satélites, que girarán alrededor de dicho planeta. Los planetas y satélites tendrán movimiento de rotación (giran sobre sí mismos) y de traslación (giran sobre la estrella principal).
+
 #### 2.1 Configuración inicial <a name="config-inicial"></a>
 El método setup() contendrá la configuración inicial de la aplicaicón, en la que se carga una imagen de fondo, se cambia la fuente por defecto y se establece el tamaño de la ventana de la aplicaicón en 1280x720.
 
