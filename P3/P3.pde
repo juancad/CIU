@@ -44,7 +44,7 @@ void setup()
   //añado dos lunas a P5
   P5.addSatelite(new Satelite("images/M2.jpg", 8, 80, 0.5, 0.7));
   P5.addSatelite(new Satelite("images/M3.jpg", 5, 100, 0.23, 1));
-    
+
   //carga P6
   P6 = new Planet("images/P6.jpg", 28);
 
@@ -52,7 +52,7 @@ void setup()
   P7 = new Planet("images/P7.jpg", 15);
 
   //carga P8
-  P8 = new Planet("images/P8.jpg", 40);
+  P8 = new Planet("images/P8.jpg", 35);
 
   //filegif = new GifMaker(this, "animacion.gif");
   //filegif.setRepeat(0);
@@ -74,7 +74,10 @@ void draw()
   shape(S1);
   popMatrix();
   //giro S1
-  angS1 = incrementAng(angS1, 0.2);
+  if (angS1>360)
+    angS1 = 0;
+  else
+    angS1 = angS1+0.2;
 
   //P1
   if (showP1) {
@@ -108,7 +111,7 @@ void draw()
 
   //P7
   if (showP7) {
-    P7.showPlanet(-680, 0, 0, 0.15, 0.5, false);
+    P7.showPlanet(-690, 0, 0, 0.15, 0.5, false);
   }
 
   //P8
@@ -162,11 +165,4 @@ void draw()
 
   //filegif.setDelay(1000/60);
   //filegif.addFrame();
-}
-
-float incrementAng(float ang, float veloc) {
-  if (ang>360)
-    return 0;
-  else
-    return ang+veloc;
 }
