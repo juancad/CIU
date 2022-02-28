@@ -1,10 +1,10 @@
-import gifAnimation.*;
+//import gifAnimation.*;
 
 PShape S1, P1, P2, P3, P4, P5, P6, P7, P8, M1, M2; 
 PImage bg, imgS1, imgP1, imgP2, imgP3, imgP4, imgP5, imgP6, imgP7, imgP8, imgM1, imgM2;
 float movRot=0, angS1=0, angP1=0, angP2=0, angP3=0, angP4=0, angP5=0, angP6=0, angP7=0, angP8=0, angM1=0, angM2;
 boolean showSat = true, showP1 = true, showP2 = true, showP3 = true, showP4 = true, showP5 = true, showP6 = true, showP7 = true, showP8 = true;
-GifMaker filegif;
+//GifMaker filegif;
 
 void setup()
 {
@@ -103,8 +103,8 @@ void setup()
   M2.setTexture(imgM2); 
   endShape(CLOSE);
   
-  filegif = new GifMaker(this, "animacion.gif");
-  filegif.setRepeat(0);
+  //filegif = new GifMaker(this, "animacion.gif");
+  //filegif.setRepeat(0);
 }
 
 
@@ -293,8 +293,8 @@ void draw()
     showP8 = false;
   }
   
-  filegif.setDelay(1000/60);
-  filegif.addFrame();
+  //filegif.setDelay(1000/60);
+  //filegif.addFrame();
 }
 
 float incrementAng(float ang, float veloc) {
