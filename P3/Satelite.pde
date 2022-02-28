@@ -42,6 +42,6 @@ public class Satelite {
       angRotation = 0;
     else
       angRotation = angRotation+velocRotation;
-  popMatrix();
+    popMatrix();
   }
 }
