@@ -19,7 +19,7 @@ Para poder ejecutar el código, se recomienda:
 3. Instalar librería de sonido: Herramientas > Añadir herramienta > Libraries > Sound > Install
 
 Ejemplo de ejecución:
-
+![Animation](https://user-images.githubusercontent.com/91132611/156978716-8d069d43-38f0-4670-9b87-8a4d34abaad3.gif)
 
 ### 3. Referencias <a name="referencias"></a>
 Processing references [proccesing.org](https://processing.org/reference/)
