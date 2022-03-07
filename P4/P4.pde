@@ -135,7 +135,7 @@ void draw()
     popMatrix();
 
     if (showControls) {
-      text("Controles:\n Arriba: acercarse\n Abajo: alejarse \n W: Subir\n S: Bajar\n A: Izquierda\n D: Derecha\n F: Girar nave a la izquierda \n G: Girar nave a la derecha\n V: Cambiar vista", 20, height-350);
+      text("Controles:\n Arriba: acercarse\n Abajo: alejarse \n W: Subir\n S: Bajar\n A: Izquierda\n D: Derecha\n F: Girar nave a la izquierda \n G: Girar nave a la derecha\n Z: Pausar/reproducir música\n V: Cambiar vista", 20, height-400);
     }
     fill(127, 255, 0);
     text("Autor\nJuan Carlos\nAlcalde Díaz", width/2-250, height-225);
@@ -182,7 +182,7 @@ void draw()
       }
     }
   } else {
-    text("Controles:\n V: Cambiar vista", 20, height-350);
+    text("Controles:\n Z: Pausar/reproducir música\n V: Cambiar vista", 20, height-350);
   }
 
   //filegif.setDelay(1000/60);
@@ -191,7 +191,8 @@ void draw()
 
 void keyPressed() {
   if (key == 'N' || key == 'n') {
-    showControls=!showControls;
+    if (view1)
+      showControls=!showControls;
   } else {
     if (key == 'V' || key == 'v') {
       view1=!view1;
