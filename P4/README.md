@@ -20,8 +20,6 @@ Para poder ejecutar el código, se recomienda:
 
 Ejemplo de ejecución:
 
-![Animation](https://user-images.githubusercontent.com/91132611/156976929-0bab38ea-9b8f-4521-bf7e-750fa7eaaceb.gif)
-
 
 ### 3. Referencias <a name="referencias"></a>
 Processing references [proccesing.org](https://processing.org/reference/)
@@ -31,3 +29,7 @@ Processing references [proccesing.org](https://processing.org/reference/)
 [Fondo](https://www.deviantart.com/paulinemoss/art/Telescopic-View-426425862)
 
 [Imágenes de las texturas](http://frederickhiggins.com/celestia/terrestrials.htm)
+
+[Música](https://pixabay.com/music/upbeat-space-chillout-14194/)
+
+[Efecto de sonido](https://freesound.org/people/NicknameLarry/sounds/492072/)
