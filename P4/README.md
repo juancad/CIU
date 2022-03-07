@@ -22,8 +22,8 @@ Para poder ejecutar el código, se recomienda:
 Ejemplo de ejecución:
 ![Animation](https://user-images.githubusercontent.com/91132611/156978716-8d069d43-38f0-4670-9b87-8a4d34abaad3.gif)
 
-###2. Descripción del trabajo realizado <a name="descripcion-trabajo"/>
-####2.1 Configuración inicial <a name="config-inicial"/>
+### 2. Descripción del trabajo realizado <a name="descripcion-trabajo"/>
+#### 2.1 Configuración inicial <a name="config-inicial"/>
 Se ha utilizado la configuración de la P3. Se va ha añadir una nave que podrá moverse por el espacio creado en la P3.
 La nave se trata de una imagen que ocupará toda la ventana de la aplicación, con ventanas a través de las cuales se podrá observar el espacio. Se carga la nave en el método setup().
 ```
@@ -39,7 +39,7 @@ La nave se trata de una imagen que ocupará toda la ventana de la aplicación, c
 ```
 Se han cargado también sonidos.
 
-####2.2 Cámara <a name="camara"/>
+#### 2.2 Cámara <a name="camara"/>
 Utilizando los controles de la aplicación se podrá mover la nave. Para ello se ha utilizado la variable mueveX, que permite cambiar la perspectiva a través del eje x, y mueveY a través del eje y. Para poder rotar la nave se utiliza la variable ang.
 ```
 //...
@@ -56,7 +56,7 @@ translate(width/2, height/2, mueveZ);
 //...
 ```
 
-####2.3. Controles de la nave <a name="controles"/>
+#### 2.3. Controles de la nave <a name="controles"/>
 Dichos controles modificarán el valor de las variables mencionadas en el punto 2.2.
 Pulsar una tecla aumentará o disminuirá el valor de las variables.
 ```
@@ -98,7 +98,7 @@ if (keyCode == UP) {
 //...
 ```
 
-####2.4. Vista de la aplicación <a name="vista"/>
+#### 2.4. Vista de la aplicación <a name="vista"/>
 Para cambiar de vista se ha establecido la tecla V. Al pulsar la tecla cambia el valor de la variable booleana view1. Si view1 está activa, se mostrará la vista de la nave y los controles de la nave, en cambio si su valor es false se mostrará sólo el espacio.
 
 ```
