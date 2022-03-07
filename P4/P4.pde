@@ -1,10 +1,8 @@
-//import gifAnimation.*;
 import processing.sound.*;
 
 PImage bg, imgS1, imgNave;
 float angS1=0, mueveZ=0, mueveX=0, mueveY=0, angL, angR, ang=0;
 PShape S1, nave;
-//GifMaker filegif;
 Planet P1, P2, P3, P4, P5, P6, P7, P8;
 Satelite M1, M2, M3;
 int aspecto;
@@ -72,9 +70,6 @@ void setup()
 
   //carga P8
   P8 = new Planet("images/P8.jpg", 35);
-
-  //filegif = new GifMaker(this, "animacion.gif");
-  //filegif.setRepeat(0);
 }
 
 
@@ -184,9 +179,6 @@ void draw()
   } else {
     text("Controles:\n Z: Pausar/reproducir música\n V: Cambiar vista", 20, height-350);
   }
-
-  //filegif.setDelay(1000/60);
-  //filegif.addFrame();
 }
 
 void keyPressed() {
