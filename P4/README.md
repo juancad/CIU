@@ -39,7 +39,7 @@ La nave se trata de una imagen que ocupará toda la ventana de la aplicación, c
 ```
 Se han cargado también sonidos.
 
-####2.2 Cámara <a name="cámara"/>
+####2.2 Cámara <a name="camara"/>
 Utilizando los controles de la aplicación se podrá mover la nave. Para ello se ha utilizado la variable mueveX, que permite cambiar la perspectiva a través del eje x, y mueveY a través del eje y. Para poder rotar la nave se utiliza la variable ang.
 ```
 //...
