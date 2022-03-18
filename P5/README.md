@@ -17,6 +17,7 @@
 La tarea a entregar consiste en hacer uso de la información contenida en dicho fichero, de forma completa o parcial (según estimen, pudiendo si así lo consideran necesario  hacer uso de información de otros años), para visualizar los datos allí presentes haciendo uso de las técnicas vistas para gráficos 3D en *Processing*" [1]
 
 Ejemplo de ejecución:
+
 ![Animation](https://user-images.githubusercontent.com/91132611/159076674-cf34918a-7964-49fa-9a6d-3b7137bfab04.gif)
 
 ### 2. Descripción del trabajo realizado <a name="descripcion-trabajo"/>
