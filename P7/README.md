@@ -76,6 +76,9 @@ Se muestra también un gráfico con el volumen de la aplicación (en el método 
 ```
 Lo que hace es dibujar un rectángulo por cada valor de sonido que tengamos (es decir, si el sonido es 0, no dibujará nada, si el sonido es 5, dibujará 5 rectángulos de seguido).
 
+Vista del volumen para un valor de musicAmp de 6:
+
+![image](https://user-images.githubusercontent.com/91132611/160538766-11a93b65-653f-443b-8603-a171452d20f1.png)
 
 #### 2.3. Modificador de frecuencia del sonido sinu <a name="frecuencia"/>
 En la aplicación, la tecla UP permitía a la nave avanzar y la telca DOWN permitía a la nave retroceder. La modificación con respecto a la P4 que se ha realizado, es la de hacer sonar el sonido sinu y aumentar su frecuencia al pulsar UP (con un máximo de 600) y disminuir al pulsar DOWN (con un mínimo de 0).
