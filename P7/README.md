@@ -76,7 +76,7 @@ Se muestra también un gráfico con el volumen de la aplicación (en el método 
 ```
 Lo que hace es dibujar un rectángulo por cada valor de sonido que tengamos (es decir, si el sonido es 0, no dibujará nada, si el sonido es 5, dibujará 5 rectángulos de seguido).
 
-Vista del volumen para un valor de musicAmp de 6:
+Vista del volumen para un valor de musicAmp de 10:
 
 ![image](https://user-images.githubusercontent.com/91132611/160538766-11a93b65-653f-443b-8603-a171452d20f1.png)
 
