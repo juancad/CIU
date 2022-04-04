@@ -1,5 +1,5 @@
 ## Práctica 9. Síntesis y procesamiento de audio
-### Autor: Pablo Morales Gómez y Juan Carlos Alcalde Díaz
+### Autores: Pablo Morales Gómez y Juan Carlos Alcalde Díaz
 
 ### Contenidos
 
