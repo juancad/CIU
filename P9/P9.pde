@@ -78,7 +78,7 @@ void draw() {
     PImage abajo = loadImage("images/down.png");
     abajo.resize(70, 70);
     image(abajo, 120, 210);
-
+    
     //se muestran los controles del jugador 2
     fill(0, 0, 0);
     textSize(12);
@@ -87,7 +87,8 @@ void draw() {
     noStroke();
     rect(270, 100, 150, 180, 15);
     fill(0, 0, 0);
-    text("Moverse arriba:", 345, 120);
+    text("Utilizar sensor\ninfrarrojo.", 345, 180);
+    /*
     PImage arriba2 = loadImage("images/w.png");
     arriba2.resize(70, 70);
     image(arriba2, 310, 120);
@@ -95,6 +96,7 @@ void draw() {
     PImage abajo2 = loadImage("images/s.png");
     abajo2.resize(70, 70);
     image(abajo2, 310, 210);
+    */
 
     if (keyPressed == true) {
       if (key == ENTER) {
