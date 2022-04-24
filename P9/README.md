@@ -19,7 +19,8 @@ Se han utilizado las siguientes variables:
 - "mappedVal" de tipo float: tendrá el valor de "val" transformado a float y mapeado para que el número esté en el rango de valores del tamaño ventana de la aplicación.
 - "previousPos" de tipo entero: guarda la posición del jugador 2 para utilziarla en caso de que se recoja algún valor nulo del sensor infrarrojo y que el jugador se mantenga en la posición anterior.
 
-Se ha modificado el movimiento del jugador 2, sustituyendo los controles de la práctica 1 por el control del sensor infrarrojo:
+Se ha modificado el movimiento del jugador 2, sustituyendo los controles de la práctica 1 por el control del sensor infrarrojo.
+El código en el que se define el movimiento del jugador 2 a partir de los datos recogidos por el sensor infrarrojo es el siguiente:
 ```
       if ( myPort.available() > 0) {  // If data is available,
         val = myPort.readStringUntil('\n'); // read it and store it in val
