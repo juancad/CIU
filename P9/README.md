@@ -41,8 +41,11 @@ El código en el que se define el movimiento del jugador 2 a partir de los datos
       }
  ```
 
-En el programa, se recogen los datos del sensor infrarrojo y se almacenan en la variable "val". Si el valor recogido no es nulo, se procede a transformar el valor recogido a un número en formato float. Posteriormente se establece un límite para valNum y se mapea dicho valor para que evitar que el jugador 2 se salga de la ventana del juego, para ello se utiliza la función [map(value, start1, stop1, start2, stop2)](https://processing.org/reference/map_.html).
-La posición del jugador 2 ahora será ahora el valor recogido por el sensor infrarrojo, mapeado para que se encuentre en una posición válida dentro del juego. La posición actual se guarda en una variable para que, en caso de que se recoja un valor nulo se utilice dicha posición.
+En el programa, se recogen los datos del sensor infrarrojo y se almacenan en la variable "val". Si el valor recogido no es nulo, se procede a transformar el valor recogido a un número en formato float. 
+
+Posteriormente se establece un límite para valNum y se mapea dicho valor para que evitar que el jugador 2 se salga de la ventana del juego. Para ello se utiliza la función [map(value, start1, stop1, start2, stop2)](https://processing.org/reference/map_.html).
+
+La posición del jugador 2 ahora será ahora el valor recogido por el sensor infrarrojo mapeado, para que se encuentre en una posición válida dentro del juego. La posición actual se guarda en una variable para que, en caso de que se recoja un valor nulo, se utilice dicha posición.
 
 ### 3. Referencias <a name="referencias"></a>
 Processing references [proccesing.org](https://processing.org/reference/)
