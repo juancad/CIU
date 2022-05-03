@@ -17,7 +17,7 @@ varying vec4 vertColor;
 uniform float u_time;
 
 void main() {
-  //Porisión del vértice tras transformar y proyectar
+  //Posición del vértice tras transformar y proyectar
   gl_Position = transform * position;
 
   //Posición del vértice en coordenadas del ojo
