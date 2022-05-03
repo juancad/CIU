@@ -1,4 +1,4 @@
-## Práctica 9. Síntesis y procesamiento de audio
+## Práctica 9. Arduino y Processing
 ### Autores: Pablo Morales Gómez y Juan Carlos Alcalde Díaz
 
 ### Contenidos
