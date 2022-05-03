@@ -1,4 +1,4 @@
-# Practica 8: Introducción a la programación con Arduino
+## Practica 8: Introducción a la programación con Arduino
 
 Autores: Juan Carlos Alcalde Díaz y Pablo Morales Gómez
 
