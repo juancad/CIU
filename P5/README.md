@@ -1,4 +1,4 @@
-## Práctica 5. Modelo cámara
+## Práctica 5. Iluminación y texturas
 ### Autor: Juan Carlos Alcalde Díaz
 
 ### Contenidos
