@@ -179,7 +179,7 @@ void draw() {
       textSize(18);
       text("Controles:", width/2-92, height/2-75);
       textSize(13);
-      text("Botón izquierdo: cambiar filtro\nBotón derecho: voltear imagen\nRueda: aumentar zoom\nH: Ocultar ayuda\n\nAutor:\nJuan Carlos Alcalde Díaz", width/2-92, height/2-45);
+      text("Botón derecho: cambiar filtro\nBotón izquierdo: voltear imagen\nRueda: aumentar zoom\nH: Ocultar ayuda\n\nAutor:\nJuan Carlos Alcalde Díaz", width/2-92, height/2-45);
     } else {
       fill(220);
       rect(width/2-70, height-25, 140, 25, 5, 5, 0, 0);
